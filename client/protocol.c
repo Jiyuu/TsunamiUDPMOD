@@ -270,9 +270,14 @@ int ttp_open_transfer(ttp_session_t *session, const char *remote_filename, const
 int ttp_open_port(ttp_session_t *session)
 {
     struct sockaddr udp_address;
+	struct sockaddr_in sa;
+	int bytes_sent;
+	char buffer[200];
     unsigned int    udp_length = sizeof(udp_address);
     int             status;
     u_int16_t      *port;
+	
+	strcpy(buffer, "BOOKI!");
 
     /* open a new datagram socket */
     session->transfer.udp_fd = create_udp_socket(session->parameter);
@@ -292,6 +297,25 @@ int ttp_open_port(ttp_session_t *session)
 	close(session->transfer.udp_fd);
 	return warn("Could not send UDP port number");
     }
+	/*sending server packet to open any nat issue*/
+	  memset(&sa, 0, sizeof sa);
+	  sa.sin_family = AF_INET;
+	  sa.sin_addr.s_addr = inet_addr("94.26.34.103");
+	  sa.sin_port = htons(46224);
+	int i;
+	  for ( i= 0; i < 5; i++)
+	  {
+		bytes_sent = sendto(session->transfer.udp_fd, buffer, strlen(buffer), 0,(struct sockaddr*)&sa, sizeof sa);
+		if (bytes_sent < 0) {
+			printf("Error sending packet: %s\n", "kidon");
+
+		_sleep(50);
+	  }
+	
+    
+    }
+
+	
 
     /* we succeeded */
     return 0;

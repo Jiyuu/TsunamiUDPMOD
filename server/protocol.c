@@ -280,7 +280,10 @@ int ttp_negotiate(ttp_session_t *session)
 int ttp_open_port(ttp_session_t *session)
 {
     struct sockaddr    *address;
-    int                 status;
+	struct sockaddr_in si_other;
+	char buf[5000];
+
+    int                 status,slen=sizeof(si_other);;
     u_int16_t           port;
     u_char              ipv6_yn = session->parameter->ipv6_yn;
 
@@ -293,6 +296,11 @@ int ttp_open_port(ttp_session_t *session)
     /* prepare the UDP address structure, minus the UDP port number */
     getpeername(session->client_fd, address, &(session->transfer.udp_length));
 
+	/* open a new datagram socket */
+    session->transfer.udp_fd = create_udp_socket(session->parameter);
+    if (session->transfer.udp_fd < 0)
+	return warn("Could not create UDP socket");
+	
     /* read in the port number from the client */
     status = full_read(session->client_fd, &port, 2);
     if (status < 0)
@@ -306,11 +314,21 @@ int ttp_open_port(ttp_session_t *session)
     if (session->parameter->verbose_yn)
 	printf("Sending to client port %d\n", ntohs(port));
 
-    /* open a new datagram socket */
-    session->transfer.udp_fd = create_udp_socket(session->parameter);
-    if (session->transfer.udp_fd < 0)
-	return warn("Could not create UDP socket");
-
+    
+	if (recvfrom(session->transfer.udp_fd, buf, 5000, 0, &si_other, &slen)==-1)
+		printf("Failure getting udp packet %d",0); 
+    printf("Received packet from %s:%d\nData: %s\n\n", 
+    inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port), buf);
+	printf("set client port to %d\n", ntohs(port));
+	
+	
+	/*setting port according to UDP connection */
+	port=si_other.sin_port;
+	if (ipv6_yn)
+	((struct sockaddr_in6 *) address)->sin6_port = port;
+    else
+	((struct sockaddr_in *)  address)->sin_port  = port;
+	
     /* we succeeded */
     session->transfer.udp_address = address;
     return 0;

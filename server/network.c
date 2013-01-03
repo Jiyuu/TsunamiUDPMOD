@@ -148,10 +148,28 @@ int create_tcp_socket(ttp_parameter_t *parameter)
  *------------------------------------------------------------------------*/
 int create_udp_socket(ttp_parameter_t *parameter)
 {
+	struct addrinfo  hints;
+	struct addrinfo *info;
+	char             buffer[10];
+	
     int socket_fd;
     int status;
     int yes = 1;
 
+	/* set up the hints for getaddrinfo() */
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_flags    = AI_PASSIVE;
+    hints.ai_family   = parameter->ipv6_yn ? AF_INET6 : AF_INET;
+    hints.ai_socktype = SOCK_DGRAM;
+	
+	
+	/* try to get address info for ourselves */
+        sprintf(buffer, "%d", 46224);
+        status = getaddrinfo(NULL, buffer, &hints, &info);
+        if (status) {
+            return warn("Error in getting address information");
+        }
+		
     /* create the socket */
     socket_fd = socket(parameter->ipv6_yn ? AF_INET6 : AF_INET, SOCK_DGRAM, 0);
     if (socket_fd < 0)
@@ -168,6 +186,12 @@ int create_udp_socket(ttp_parameter_t *parameter)
     status = setsockopt(socket_fd, SOL_SOCKET, SO_SNDBUF, &parameter->udp_buffer, sizeof(parameter->udp_buffer));
     if (status < 0) {
 	warn("Error in resizing UDP transmit buffer");
+    }
+	
+	/* and try to bind it */
+    status = bind(socket_fd, info->ai_addr, info->ai_addrlen);
+    if (status == 0) {
+        fprintf(stderr, "readying on UDP port %d\n", 46224);
     }
 
     /* return the file desscriptor */

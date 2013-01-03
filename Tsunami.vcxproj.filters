@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="client\command.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\network_v4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\network_v6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\protocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\ring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="client\transcript.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\common_win32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\md5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\mk5api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\protocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\transcript.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mk5server\tstamp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\command.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\network_v4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\network_v6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\protocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\ring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\transcript.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtclient\vsibctl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\parse_evn_filename.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\protocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\transcript.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\tstamp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rtserver\vsibctl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="semaphoreexamples\sema.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="semaphoreexamples\semabinit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="semaphoreexamples\semb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\network.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\protocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\transcript.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\bskp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\dump.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\fusereadtest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\insertsorttest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\readtest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util\writetest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\md5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tsunami-client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tsunami-cvs-buildnr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tsunami-server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tsunami.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mk5server\mk5api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mk5server\registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mk5server\xlrapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mk5server\xlrtypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtclient\vsibctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtclient\vsib_ioctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtserver\parse_evn_filename.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtserver\registration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtserver\vsibctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rtserver\vsib_ioctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -2,6 +2,7 @@
 *.slo
 *.lo
 *.o
+*.po
 
 # Compiled Dynamic libraries
 *.so
@@ -11,7 +12,27 @@
 *.la
 *.a
 
-*.7z
 *.exe
-*.po
+
 *.dll
+*.7z
+
+
+
+
+*.opensdf
+*.suo
+*.user
+makefile
+Makefile.in
+*.m4
+
+Makefile.in
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing

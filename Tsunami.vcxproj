@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="client\command.c" />
+    <ClCompile Include="client\config.c" />
+    <ClCompile Include="client\io.c" />
+    <ClCompile Include="client\main.c" />
+    <ClCompile Include="client\network.c" />
+    <ClCompile Include="client\network_v4.c" />
+    <ClCompile Include="client\network_v6.c" />
+    <ClCompile Include="client\protocol.c" />
+    <ClCompile Include="client\ring.c" />
+    <ClCompile Include="client\transcript.c" />
+    <ClCompile Include="common\common.c" />
+    <ClCompile Include="common\common_win32.c" />
+    <ClCompile Include="common\error.c" />
+    <ClCompile Include="common\md5.c" />
+    <ClCompile Include="mk5server\config.c" />
+    <ClCompile Include="mk5server\io.c" />
+    <ClCompile Include="mk5server\log.c" />
+    <ClCompile Include="mk5server\main.c" />
+    <ClCompile Include="mk5server\mk5api.c" />
+    <ClCompile Include="mk5server\network.c" />
+    <ClCompile Include="mk5server\protocol.c" />
+    <ClCompile Include="mk5server\transcript.c" />
+    <ClCompile Include="mk5server\tstamp.c" />
+    <ClCompile Include="rtclient\command.c" />
+    <ClCompile Include="rtclient\config.c" />
+    <ClCompile Include="rtclient\io.c" />
+    <ClCompile Include="rtclient\main.c" />
+    <ClCompile Include="rtclient\network.c" />
+    <ClCompile Include="rtclient\network_v4.c" />
+    <ClCompile Include="rtclient\network_v6.c" />
+    <ClCompile Include="rtclient\protocol.c" />
+    <ClCompile Include="rtclient\ring.c" />
+    <ClCompile Include="rtclient\transcript.c" />
+    <ClCompile Include="rtclient\vsibctl.c" />
+    <ClCompile Include="rtserver\config.c" />
+    <ClCompile Include="rtserver\io.c" />
+    <ClCompile Include="rtserver\log.c" />
+    <ClCompile Include="rtserver\main.c" />
+    <ClCompile Include="rtserver\network.c" />
+    <ClCompile Include="rtserver\parse_evn_filename.c" />
+    <ClCompile Include="rtserver\protocol.c" />
+    <ClCompile Include="rtserver\transcript.c" />
+    <ClCompile Include="rtserver\tstamp.c" />
+    <ClCompile Include="rtserver\vsibctl.c" />
+    <ClCompile Include="semaphoreexamples\sema.c" />
+    <ClCompile Include="semaphoreexamples\semabinit.c" />
+    <ClCompile Include="semaphoreexamples\semb.c" />
+    <ClCompile Include="server\config.c" />
+    <ClCompile Include="server\io.c" />
+    <ClCompile Include="server\log.c" />
+    <ClCompile Include="server\main.c" />
+    <ClCompile Include="server\network.c" />
+    <ClCompile Include="server\protocol.c" />
+    <ClCompile Include="server\transcript.c" />
+    <ClCompile Include="util\bskp.c" />
+    <ClCompile Include="util\dump.c" />
+    <ClCompile Include="util\fusereadtest.c" />
+    <ClCompile Include="util\insertsorttest.c" />
+    <ClCompile Include="util\readtest.c" />
+    <ClCompile Include="util\writetest.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\md5.h" />
+    <ClInclude Include="include\tsunami-client.h" />
+    <ClInclude Include="include\tsunami-cvs-buildnr.h" />
+    <ClInclude Include="include\tsunami-server.h" />
+    <ClInclude Include="include\tsunami.h" />
+    <ClInclude Include="mk5server\mk5api.h" />
+    <ClInclude Include="mk5server\registration.h" />
+    <ClInclude Include="mk5server\xlrapi.h" />
+    <ClInclude Include="mk5server\xlrtypes.h" />
+    <ClInclude Include="rtclient\vsibctl.h" />
+    <ClInclude Include="rtclient\vsib_ioctl.h" />
+    <ClInclude Include="rtserver\parse_evn_filename.h" />
+    <ClInclude Include="rtserver\registration.h" />
+    <ClInclude Include="rtserver\vsibctl.h" />
+    <ClInclude Include="rtserver\vsib_ioctl.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

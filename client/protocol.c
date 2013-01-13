@@ -300,8 +300,11 @@ int ttp_open_port(ttp_session_t *session)
 	/*sending server packet to open any nat issue*/
 	  memset(&sa, 0, sizeof sa);
 	  sa.sin_family = AF_INET;
-	  sa.sin_addr.s_addr = inet_addr("94.26.34.103");
-	  sa.sin_port = htons(46224);
+	  sa.sin_addr = ((struct sockaddr_in *) session->server_address)->sin_addr;
+	  sa.sin_port = ((struct sockaddr_in *) session->server_address)->sin_port;
+
+printf("Sending \"%s\" to '%s' on port '%i' to make NAT punchthrough.\n", buffer,inet_ntoa(sa.sin_addr),ntohs(((struct sockaddr_in *) session->server_address)->sin_port));
+
 	int i;
 	  for ( i= 0; i < 5; i++)
 	  {
@@ -309,7 +312,7 @@ int ttp_open_port(ttp_session_t *session)
 		if (bytes_sent < 0) {
 			printf("Error sending packet: %s\n", "kidon");
 
-		_sleep(50);
+		usleep_that_works(50);
 	  }
 	
     
